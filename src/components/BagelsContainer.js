@@ -1,6 +1,5 @@
 import React from 'react';
 import Bagel from './Bagel';
-import Delete from './Delete';
 
 function BagelsContainer(props) {
     const bagel = props.bagels.map(bagel => {
@@ -8,9 +7,7 @@ function BagelsContainer(props) {
     })
     return (
         <div>
-            <p>This is the Bagels Container</p>
             {bagel}
-            <Delete />
         </div>
         
     );

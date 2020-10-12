@@ -1,0 +1,22 @@
+.bagel-item {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+    margin: 20px;
+    padding: 5px;
+    width: 25%;
+    text-align: center;
+}
+
+li {
+    list-style: none;
+    font-weight: bold;
+}
+form {
+    width: 18%;
+    margin-left: 100px;
+}
+
+.bagel-item p {
+    color: darkgray;
+}

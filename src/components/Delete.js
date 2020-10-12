@@ -1,11 +1,11 @@
-import React from 'react';
+// import React from 'react';
 
-function Delete() {
-    return (
-        <>
-            <button>Delete Bagel</button>
-        </>
-    );
-}
+// function Delete() {
+//     return (
+//         <>
+//             <button>Delete Bagel</button>
+//         </>
+//     );
+// }
 
-export default Delete; 
+// export default Delete; 
