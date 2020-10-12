@@ -15,7 +15,7 @@ class App extends React.Component {
       .then(bagels => this.setState({bagels: bagels}))
   }
 
-  submitBagel(bagel) {
+  submitBagel = (bagel) => {
     fetch('http://bagel-api-fis.herokuapp.com/bagels', {
       method: "POST",
       headers: {
@@ -23,7 +23,8 @@ class App extends React.Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({type: bagel})
-    })
+    }).then(response => response.json())
+      .then(bagel => this.setState(this.setState({bagels: [...this.state.bagels, bagel]})))
   }
 
   render() {
