@@ -27,15 +27,23 @@ class App extends React.Component {
       .then(bagel => this.setState(this.setState({bagels: [...this.state.bagels, bagel]})))
   }
 
+  deleteBagel = (bagel) => {
+    const newBagels = this.state.bagels.filter(newBagel => {
+      return newBagel !== bagel
+    })
+    this.setState({bagels: newBagels})
+    fetch(`http://bagel-api-fis.herokuapp.com/bagels/${bagel.id}`, {method: "DELETE"})
+  }
+  
   render() {
     return (
       <div className="App">
         <h1>BAGELS, BAGELS, BAGELS!!</h1>
         <Form submitBagel={this.submitBagel} />
-        <BagelsContainer bagels={this.state.bagels} />
+        <BagelsContainer bagels={this.state.bagels} deleteBagel={this.deleteBagel} />
       </div>
     )
   };
 }
 
-export default App;
+export default App;   

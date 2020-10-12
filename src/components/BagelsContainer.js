@@ -2,8 +2,13 @@ import React from 'react';
 import Bagel from './Bagel';
 
 function BagelsContainer(props) {
-    const bagel = props.bagels.map(bagel => {
-        return <Bagel key={bagel.id} type={bagel.type} rating={bagel.rating}/>
+    const bagel = props.bagels.map(bagel => {return <Bagel 
+            bagel={bagel}
+            key={bagel.id} 
+            type={bagel.type} 
+            rating={bagel.rating}
+            deleteBagel={props.deleteBagel}
+            />
     })
     return (
         <div>
@@ -14,4 +19,4 @@ function BagelsContainer(props) {
 }
 
 
-export default BagelsContainer; 
+export default BagelsContainer;  
