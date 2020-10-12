@@ -15,11 +15,22 @@ class App extends React.Component {
       .then(bagels => this.setState({bagels: bagels}))
   }
 
+  submitBagel(bagel) {
+    fetch('http://bagel-api-fis.herokuapp.com/bagels', {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({type: bagel})
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>BAGELS, BAGELS, BAGELS!!</h1>
-        <Form />
+        <Form submitBagel={this.submitBagel} />
         <BagelsContainer bagels={this.state.bagels} />
       </div>
     )
